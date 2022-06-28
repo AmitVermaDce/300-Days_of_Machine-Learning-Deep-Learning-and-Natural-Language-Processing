@@ -15,7 +15,7 @@ def grad_b(w, b, x, y):
     return (fx - y) * fx * (1 - fx)
 
 
-def do_momentum_based_gradient_descent(X, Y):
+def do_stochastic_nesterov_accelerated_gradient_descent(X, Y):
     w, b, eta, max_epochs = -2, -2, 1.0, 1000
     prev_v_w, prev_v_b, gamma = 0, 0, 0.9
     for i in range(max_epochs):
