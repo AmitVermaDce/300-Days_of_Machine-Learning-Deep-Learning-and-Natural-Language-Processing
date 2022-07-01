@@ -1,9 +1,15 @@
 import numpy as np
 
 
-def sigmoid(w, b, x, ):
+def sigmoid(w, b, x):
     return 1.0 / (1 + np.exp(-1 * (w * x + b)))
 
+def error(w, b, X, Y):
+    err = 0.0
+    for x, y in zip(X, Y):
+        fx = sigmoid(w, b, x)
+        err += 0.5 * (fx - y) ** 2
+    return err
 
 def grad_w(w, b, x, y):
     fx = sigmoid(w, b, x)
